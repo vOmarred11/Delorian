@@ -5,20 +5,29 @@ import (
 )
 
 const (
-	CommandTypeAlias  = ""
-	CommandTypeOffset = ""
+	CommandTypeAlias       = ""
+	CommandTypeOffset      = ""
+	CommandOriginTypeSlash = "/"
+	CommandOriginTypePoint = "."
 )
 
 type Command struct {
-	name  string
-	desc  string
-	alias any
+	Name    string
+	Desc    string
+	Alias   any
+	Replace bool
+	Message string
+	Action  byte
+}
+type CommandOrigin struct {
+	CommandOriginTypeSlash string
+	CommandOriginTypePoint string
 }
 type offset struct {
-	feedback byte
-	greet    any
-	slice    any
-	stat     []protocol.Command
+	Feedback byte
+	Greet    any
+	Slice    any
+	Stat     []protocol.Command
 }
 type hts interface {
 	commandvl() []protocol.Command

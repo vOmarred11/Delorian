@@ -1,12 +1,15 @@
 package stc
 
 import "github.com/sandertv/gophertunnel/minecraft/protocol"
+
 func slice() string {
 	return "stc error-1"
 }
-func make() {
+func stc() {
 	slice()
 }
-type stc struct{
-	upon []protocol.Command
+
+type upon struct {
+	upon []protocol.Attribute
+	ruch chan protocol.Attribute
 }
